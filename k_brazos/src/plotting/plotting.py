@@ -33,7 +33,7 @@ def get_algorithm_label(algo: Algorithm) -> str:
     label = type(algo).__name__
     if isinstance(algo, EpsilonGreedy) or isinstance(algo, EpsilonGreedyExploration):
         label += f" (epsilon={algo.epsilon})"
-    if isinstance(algo, EpsilonGreedyDecay):
+    elif isinstance(algo, EpsilonGreedyDecay):
         label += f" (start_epsilon={algo.start_epsilon})"
     elif isinstance(algo, Softmax):
         label += f" (tau={algo.tau})"
